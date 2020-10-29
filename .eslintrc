@@ -4,6 +4,7 @@
     "es6": true
   },
   "extends": ["react-app", "plugin:prettier/recommended", "plugin:react/recommended"],
+  "parser": "babel-eslint",
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
