@@ -16,7 +16,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["flowtype", "import", "jsx-a11y", "prettier", "react-hooks", "react", "simple-import-sort"],
+  "plugins": ["import", "jsx-a11y", "prettier", "react-hooks", "react", "simple-import-sort"],
   "rules": {
     "no-console": [2, { "allow": ["warn", "error"] }],
     "no-unused-vars": 2,
