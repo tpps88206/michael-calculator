@@ -13,9 +13,13 @@ const AutoScalingText = ({ children }) => {
   const nodeRef = useRef(null);
 
   useEffect(() => {
-    const parentNode = nodeRef.current.parentNode;
-    const availableWidth = parentNode.offsetWidth;
-    const actualWidth = nodeRef.current.offsetWidth;
+    const parentNode = nodeRef.current.parentNode; // 取得顯示區域的父類別元素
+    const availableWidth = parentNode.offsetWidth; // 取得父類別元素佔用的寬度
+    const actualWidth = nodeRef.current.offsetWidth; // 取得顯示數字佔用的寬度
+    // 使用父類別元素佔用的寬度除以顯示數字佔用的寬度
+    // 如果結果大於 1 表示該空間還夠顯示所有數字
+    // 如果結果小於 1 表示數字的寬度已經超過父類別
+    // 需要根據超過的比例，等比例縮小
     const actualScale = availableWidth / actualWidth;
 
     if (scale === actualScale) return;

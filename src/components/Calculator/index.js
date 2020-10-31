@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import replace from 'lodash/replace';
-
 import { makeStyles } from '@material-ui/styles';
 
 import CalculatorDisplay from './CalculatorDisplay';
@@ -10,6 +8,7 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
+// 定義四則運算方法
 const CalculatorOperations = {
   '/': (prevValue, nextValue) => prevValue / nextValue,
   '*': (prevValue, nextValue) => prevValue * nextValue,
@@ -21,11 +20,12 @@ const CalculatorOperations = {
 const Calculator = () => {
   const classes = useStyles();
 
-  const [value, setValue] = useState(null);
-  const [displayValue, setDisplayValue] = useState('0');
-  const [operator, setOperator] = useState(null);
-  const [waitingForOperand, setWaitingForOperand] = useState(false);
+  const [value, setValue] = useState(null); // 記錄目前計算結果的數值
+  const [displayValue, setDisplayValue] = useState('0'); // 記錄顯示區域需要顯示的數字
+  const [operator, setOperator] = useState(null); // 記錄當前四則運算方法
+  const [waitingForOperand, setWaitingForOperand] = useState(false); // 記錄是否需要將畫面的數字消除
 
+  // TODO: 有時候按鍵會失效
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     return () => {
@@ -33,6 +33,7 @@ const Calculator = () => {
     };
   }, []);
 
+  // 清空所有狀態
   const clearAll = () => {
     setValue(null);
     setDisplayValue('0');
@@ -40,22 +41,26 @@ const Calculator = () => {
     setWaitingForOperand(false);
   };
 
+  // 將顯示區域重新顯示 0
   const clearDisplay = () => {
     setDisplayValue('0');
   };
 
+  // 按下鍵盤倒退鍵時，刪除最後一個數字
   const clearLastChar = () => {
     setDisplayValue(displayValue => {
       return displayValue.substring(0, displayValue.length - 1) || '0';
     });
   };
 
+  // 正負轉換
   const toggleSign = () => {
     setDisplayValue(displayValue => {
       return String(parseFloat(displayValue) * -1);
     });
   };
 
+  // 按下百分比
   const inputPercent = () => {
     const currentValue = parseFloat(displayValue);
 
@@ -63,20 +68,21 @@ const Calculator = () => {
       return;
     }
 
-    // 取小數點以後的數字
-    const fixedDigits = replace(displayValue, /^-?\d*\.?/, '');
-    const newValue = parseFloat(displayValue) / 100;
-
-    setDisplayValue(String(newValue.toFixed(fixedDigits.length + 2)));
+    const newValue = currentValue / 100;
+    setDisplayValue(String(newValue));
   };
 
+  // 按下小數點
   const inputDot = () => {
+    // 先判斷目前是否有小數點了
     if (!/\./.test(displayValue)) {
       setDisplayValue(displayValue + '.');
+      // TODO: 如果 waitingForOperand 為 true 的情況下按下小數點按鍵應該顯示 0.
       setWaitingForOperand(false);
     }
   };
 
+  // 按下數字
   const inputDigit = digit => {
     if (waitingForOperand) {
       setDisplayValue(String(digit));
@@ -88,12 +94,14 @@ const Calculator = () => {
     }
   };
 
+  // 按下四則運算
   const performOperation = nextOperator => {
     const inputValue = parseFloat(displayValue);
 
     if (value == null) {
       setValue(inputValue);
     } else if (operator) {
+      // 如果先前已經按過其他四則運算，則先處理
       const currentValue = value || 0;
       const newValue = CalculatorOperations[operator](currentValue, inputValue);
 
@@ -101,7 +109,7 @@ const Calculator = () => {
       setDisplayValue(String(newValue));
     }
 
-    setWaitingForOperand(true);
+    setWaitingForOperand(true); // 按下四則運算後，再輸入數字的話要清空顯示區域
     setOperator(nextOperator);
   };
 
