@@ -1,3 +1,5 @@
+// TODO: use OOCSS
+
 const styles = theme => ({
   functionKeys: {
     display: 'flex',

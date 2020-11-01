@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Icon from '@material-ui/core/Icon';
 import AddIcon from '@material-ui/icons/Add';
@@ -10,6 +11,7 @@ import DivisionSvg from '../../assets/division.svg';
 import EqualSvg from '../../assets/equal.svg';
 import PercentSvg from '../../assets/percent.svg';
 import ToggleSvg from '../../assets/toggle.svg';
+import { clearAll, setDisplayValue, setValueFromOperation } from '../../redux/slices/calculate';
 import CalculatorDisplay from './CalculatorDisplay';
 import CalculatorKey from './CalculatorKey';
 import styles from './styles';
@@ -27,10 +29,12 @@ const CalculatorOperations = {
 
 const Calculator = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
-  const [value, setValue] = useState(null); // 記錄目前計算結果的數值
-  const [displayValue, setDisplayValue] = useState('0'); // 記錄顯示區域需要顯示的數字
-  const [operator, setOperator] = useState(null); // 記錄當前四則運算方法
+  const value = useSelector(state => state.calculate.value);
+  const displayValue = useSelector(state => state.calculate.displayValue);
+  const operator = useSelector(state => state.calculate.operator);
+
   const [waitingForOperand, setWaitingForOperand] = useState(false); // 記錄是否需要將畫面的數字消除
 
   // TODO: 有時候按鍵會失效
@@ -41,31 +45,23 @@ const Calculator = () => {
     };
   }, []);
 
-  // 清空所有狀態
-  const clearAll = () => {
-    setValue(null);
-    setDisplayValue('0');
-    setOperator(null);
-    setWaitingForOperand(false);
-  };
-
-  // 將顯示區域重新顯示 0
-  const clearDisplay = () => {
-    setDisplayValue('0');
+  const reset = () => {
+    if (displayValue !== '0') {
+      // 將顯示區域重新顯示 0
+      dispatch(setDisplayValue({ val: '0' }));
+    } else {
+      dispatch(clearAll());
+    }
   };
 
   // 按下鍵盤倒退鍵時，刪除最後一個數字
   const clearLastChar = () => {
-    setDisplayValue(displayValue => {
-      return displayValue.substring(0, displayValue.length - 1) || '0';
-    });
+    dispatch(setDisplayValue({ val: displayValue.substring(0, displayValue.length - 1) || '0' }));
   };
 
   // 正負轉換
   const toggleSign = () => {
-    setDisplayValue(displayValue => {
-      return String(parseFloat(displayValue) * -1);
-    });
+    dispatch(setDisplayValue({ val: parseFloat(displayValue) * -1 }));
   };
 
   // 按下百分比
@@ -76,15 +72,14 @@ const Calculator = () => {
       return;
     }
 
-    const newValue = currentValue / 100;
-    setDisplayValue(String(newValue));
+    dispatch(setDisplayValue({ val: currentValue / 100 }));
   };
 
   // 按下小數點
   const inputDot = () => {
     // 先判斷目前是否有小數點了
     if (!/\./.test(displayValue)) {
-      setDisplayValue(displayValue + '.');
+      dispatch(setDisplayValue({ val: displayValue + '.' }));
       // TODO: 如果 waitingForOperand 為 true 的情況下按下小數點按鍵應該顯示 0.
       setWaitingForOperand(false);
     }
@@ -93,12 +88,10 @@ const Calculator = () => {
   // 按下數字
   const inputDigit = digit => {
     if (waitingForOperand) {
-      setDisplayValue(String(digit));
+      dispatch(setDisplayValue({ val: String(digit) }));
       setWaitingForOperand(false);
     } else {
-      setDisplayValue(displayValue => {
-        return displayValue === '0' ? String(digit) : displayValue + digit;
-      });
+      dispatch(setDisplayValue({ val: displayValue === '0' ? String(digit) : displayValue + digit }));
     }
   };
 
@@ -107,18 +100,16 @@ const Calculator = () => {
     const inputValue = parseFloat(displayValue);
 
     if (value == null) {
-      setValue(inputValue);
+      dispatch(setValueFromOperation({ value: inputValue, displayValue, operator: nextOperator }));
     } else if (operator) {
       // 如果先前已經按過其他四則運算，則先處理
       const currentValue = value || 0;
       const newValue = CalculatorOperations[operator](currentValue, inputValue);
 
-      setValue(newValue);
-      setDisplayValue(String(newValue));
+      dispatch(setValueFromOperation({ value: newValue, displayValue: String(newValue), operator: nextOperator }));
     }
 
     setWaitingForOperand(true); // 按下四則運算後，再輸入數字的話要清空顯示區域
-    setOperator(nextOperator);
   };
 
   const handleKeyDown = event => {
@@ -145,13 +136,9 @@ const Calculator = () => {
       clearLastChar();
     } else if (key === 'Clear') {
       event.preventDefault();
-
-      if (displayValue !== '0') {
-        clearDisplay();
-      } else {
-        clearAll();
-      }
     }
+
+    reset();
   };
 
   return (
@@ -160,7 +147,7 @@ const Calculator = () => {
       <div className={classes.calculatorKeypad}>
         <div className={classes.inputKeys}>
           <div className={classes.functionKeys}>
-            <CalculatorKey variant="function-key" onPress={() => (displayValue !== '0' ? clearDisplay() : clearAll())}>
+            <CalculatorKey variant="function-key" onPress={() => reset()}>
               {displayValue !== '0' ? 'C' : 'AC'}
             </CalculatorKey>
             <CalculatorKey variant="function-key" onPress={() => toggleSign()}>
