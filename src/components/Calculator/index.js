@@ -165,12 +165,12 @@ const Calculator = () => {
             </CalculatorKey>
             <CalculatorKey variant="function-key" onPress={() => toggleSign()}>
               <Icon>
-                <img src={ToggleSvg} alt="equal" width="24" height="24" />
+                <img src={ToggleSvg} alt="equal" width="36" height="36" />
               </Icon>
             </CalculatorKey>
             <CalculatorKey variant="function-key" onPress={() => inputPercent()}>
               <Icon>
-                <img src={PercentSvg} alt="equal" width="16" height="16" />
+                <img src={PercentSvg} alt="equal" width="32" height="32" />
               </Icon>
             </CalculatorKey>
           </div>
@@ -213,21 +213,21 @@ const Calculator = () => {
         <div className={classes.operatorKeys}>
           <CalculatorKey variant="operator-key" onPress={() => performOperation('/')}>
             <Icon>
-              <img src={DivisionSvg} alt="division" width="16" height="16" />
+              <img src={DivisionSvg} alt="division" width="32" height="32" />
             </Icon>
           </CalculatorKey>
-          <CalculatorKey className={classes.keyMultiply} variant="operator-key" onPress={() => performOperation('*')}>
-            <ClearIcon />
+          <CalculatorKey variant="operator-key" onPress={() => performOperation('*')}>
+            <ClearIcon style={{ fontSize: 56 }} />
           </CalculatorKey>
           <CalculatorKey variant="operator-key" onPress={() => performOperation('-')}>
-            <RemoveIcon />
+            <RemoveIcon style={{ fontSize: 56 }} />
           </CalculatorKey>
           <CalculatorKey variant="operator-key" onPress={() => performOperation('+')}>
-            <AddIcon />
+            <AddIcon style={{ fontSize: 56 }} />
           </CalculatorKey>
           <CalculatorKey variant="operator-key" onPress={() => performOperation('=')}>
             <Icon>
-              <img src={EqualSvg} alt="equal" width="16" height="16" />
+              <img src={EqualSvg} alt="equal" width="32" height="32" />
             </Icon>
           </CalculatorKey>
         </div>

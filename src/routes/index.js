@@ -5,7 +5,6 @@ import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
 
 import Progress from '../components/Progress';
-import MainPage from '../pages/Main';
 import configureStore, { history } from '../redux/configureStore';
 
 const store = configureStore();
@@ -15,8 +14,7 @@ const Switcher = () => {
   return (
     <Suspense fallback={<Progress message="Loading..." />}>
       <Switch>
-        <Route path="/calculator" component={CalculatorRouter} />
-        <Route path="/" component={MainPage} />
+        <Route path="/" component={CalculatorRouter} />
       </Switch>
     </Suspense>
   );

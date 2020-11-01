@@ -1,43 +1,40 @@
 const styles = theme => ({
   functionKeys: {
     display: 'flex',
-    background: 'linear-gradient(to bottom, rgba(202,202,204,1) 0%, rgba(196,194,204,1) 100%)',
   },
   operatorKeys: {
-    background: 'linear-gradient(to bottom, rgba(252,156,23,1) 0%, rgba(247,126,27,1) 100%)',
+    display: 'grid',
   },
   digitKeys: {
-    background: '#e0e0e7',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap-reverse',
   },
   inputKeys: {
-    width: 240,
+    width: 360,
   },
   calculatorKeypad: {
-    height: 400,
+    height: 600,
     display: 'flex',
   },
   calculator: {
+    background: 'linear-gradient(#84BAFF, #0B0E1C)',
     width: '100%',
     height: '100%',
-    background: 'black',
     display: 'flex',
     flexDirection: 'column',
     boxShadow: '0px 0px 20px 0px #aaa',
   },
   keyDot: {
-    paddingTop: '1em',
-    fontSize: '0.75em',
+    paddingTop: '1em !important',
+    fontSize: '0.75em !important',
+    lineHeight: '106px !important',
   },
   key0: {
-    width: 160,
-    textAlign: 'left',
-    paddingLeft: 32,
-  },
-  keyMultiply: {
-    lineHeight: '50px',
+    width: '220px !important',
+    textAlign: 'left !important',
+    paddingLeft: '40px !important',
+    borderRadius: '40px !important',
   },
 });
 

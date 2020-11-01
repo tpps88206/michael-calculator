@@ -1,9 +1,8 @@
 const styles = theme => ({
   calculatorDisplay: {
     color: 'white',
-    background: '#1c191c',
-    lineHeight: '130px',
-    fontSize: '6em',
+    paddingTop: '70px',
+    fontSize: '6.5em',
     flex: 1,
   },
 });
