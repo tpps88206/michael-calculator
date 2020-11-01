@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
+import Icon from '@material-ui/core/Icon';
+import AddIcon from '@material-ui/icons/Add';
+import ClearIcon from '@material-ui/icons/Clear';
+import RemoveIcon from '@material-ui/icons/Remove';
 import { makeStyles } from '@material-ui/styles';
 
+import DivisionSvg from '../../assets/division.svg';
+import EqualSvg from '../../assets/equal.svg';
+import PercentSvg from '../../assets/percent.svg';
+import ToggleSvg from '../../assets/toggle.svg';
 import CalculatorDisplay from './CalculatorDisplay';
 import CalculatorKey from './CalculatorKey';
 import styles from './styles';
@@ -156,10 +164,14 @@ const Calculator = () => {
               {displayValue !== '0' ? 'C' : 'AC'}
             </CalculatorKey>
             <CalculatorKey variant="function-key" onPress={() => toggleSign()}>
-              ±
+              <Icon>
+                <img src={ToggleSvg} alt="equal" width="24" height="24" />
+              </Icon>
             </CalculatorKey>
             <CalculatorKey variant="function-key" onPress={() => inputPercent()}>
-              %
+              <Icon>
+                <img src={PercentSvg} alt="equal" width="16" height="16" />
+              </Icon>
             </CalculatorKey>
           </div>
           <div className={classes.digitKeys}>
@@ -200,19 +212,23 @@ const Calculator = () => {
         </div>
         <div className={classes.operatorKeys}>
           <CalculatorKey variant="operator-key" onPress={() => performOperation('/')}>
-            ÷
+            <Icon>
+              <img src={DivisionSvg} alt="division" width="16" height="16" />
+            </Icon>
           </CalculatorKey>
           <CalculatorKey className={classes.keyMultiply} variant="operator-key" onPress={() => performOperation('*')}>
-            ×
+            <ClearIcon />
           </CalculatorKey>
           <CalculatorKey variant="operator-key" onPress={() => performOperation('-')}>
-            −
+            <RemoveIcon />
           </CalculatorKey>
           <CalculatorKey variant="operator-key" onPress={() => performOperation('+')}>
-            +
+            <AddIcon />
           </CalculatorKey>
           <CalculatorKey variant="operator-key" onPress={() => performOperation('=')}>
-            =
+            <Icon>
+              <img src={EqualSvg} alt="equal" width="16" height="16" />
+            </Icon>
           </CalculatorKey>
         </div>
       </div>
