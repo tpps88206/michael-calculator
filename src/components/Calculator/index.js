@@ -142,7 +142,7 @@ const Calculator = () => {
   };
 
   return (
-    <div className={classNames(classes.calculator, 'pa-1 h-100 w-100')}>
+    <div className={classNames(classes.calculator, 'pa-1 w-100')}>
       <CalculatorDisplay value={displayValue} />
       <div className={classes.calculatorKeypad}>
         <Grid container spacing={2} className="h-100">

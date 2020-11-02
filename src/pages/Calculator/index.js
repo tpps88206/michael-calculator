@@ -1,24 +1,37 @@
 import React, { useState } from 'react';
+import Draggable from 'react-draggable';
 
+import classNames from 'classnames';
+
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import GradientIcon from '@material-ui/icons/Gradient';
 import { makeStyles } from '@material-ui/styles';
 
 import Calculator from '../../components/Calculator';
 import styles from './styles';
+
 const useStyles = makeStyles(styles);
 
-import Draggable from 'react-draggable';
-
-import Button from '@material-ui/core/Button';
-import GradientIcon from '@material-ui/icons/Gradient';
 const CalculatorPage = () => {
   const classes = useStyles();
 
-  const [openingCalculator, setOpeningCalculator] = useState(false); // 是否開啟計算機
+  const [open, setOpen] = useState(false); // 是否開啟計算機
 
-  const handleClick = () => {
-    setOpeningCalculator(openingCalculator => {
-      return !openingCalculator;
-    });
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const PaperComponent = ({ className, ...props }) => {
+    return (
+      <Draggable>
+        <div className={classNames(className, classes.paper)} {...props} />
+      </Draggable>
+    );
   };
 
   return (
@@ -29,17 +42,13 @@ const CalculatorPage = () => {
         color="primary"
         size="large"
         startIcon={<GradientIcon />}
-        onClick={handleClick}
+        onClick={handleClickOpen}
       >
         打開計算機
       </Button>
-      {openingCalculator && (
-        <Draggable>
-          <div className={classes.calculator}>
-            <Calculator />
-          </div>
-        </Draggable>
-      )}
+      <Dialog open={open} onClose={handleClose} PaperComponent={PaperComponent}>
+        <Calculator />
+      </Dialog>
     </div>
   );
 };

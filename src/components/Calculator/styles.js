@@ -13,6 +13,7 @@ const styles = theme => ({
   calculator: {
     background: 'linear-gradient(#84BAFF, #0B0E1C)',
     boxShadow: '0px 0px 20px 0px #aaa',
+    height: 'inherit', // TODO: fix height value for overflow-y
   },
   keyDot: {
     fontSize: '0.75em !important',
