@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Icon from '@material-ui/core/Icon';
@@ -11,7 +11,7 @@ import DivisionSvg from '../../assets/division.svg';
 import EqualSvg from '../../assets/equal.svg';
 import PercentSvg from '../../assets/percent.svg';
 import ToggleSvg from '../../assets/toggle.svg';
-import { clearAll, setDisplayValue, setValueFromOperation } from '../../redux/slices/calculate';
+import { clearAll, setValue } from '../../redux/slices/calculate';
 import CalculatorDisplay from './CalculatorDisplay';
 import CalculatorKey from './CalculatorKey';
 import styles from './styles';
@@ -34,8 +34,7 @@ const Calculator = () => {
   const value = useSelector(state => state.calculate.value);
   const displayValue = useSelector(state => state.calculate.displayValue);
   const operator = useSelector(state => state.calculate.operator);
-
-  const [waitingForOperand, setWaitingForOperand] = useState(false); // 記錄是否需要將畫面的數字消除
+  const waitingForOperand = useSelector(state => state.calculate.waitingForOperand);
 
   // TODO: 有時候按鍵會失效
   useEffect(() => {
@@ -48,7 +47,7 @@ const Calculator = () => {
   const reset = () => {
     if (displayValue !== '0') {
       // 將顯示區域重新顯示 0
-      dispatch(setDisplayValue({ val: '0' }));
+      dispatch(setValue({ displayValue: '0' }));
     } else {
       dispatch(clearAll());
     }
@@ -56,12 +55,12 @@ const Calculator = () => {
 
   // 按下鍵盤倒退鍵時，刪除最後一個數字
   const clearLastChar = () => {
-    dispatch(setDisplayValue({ val: displayValue.substring(0, displayValue.length - 1) || '0' }));
+    dispatch(setValue({ displayValue: displayValue.substring(0, displayValue.length - 1) || '0' }));
   };
 
   // 正負轉換
   const toggleSign = () => {
-    dispatch(setDisplayValue({ val: parseFloat(displayValue) * -1 }));
+    dispatch(setValue({ displayValue: parseFloat(displayValue) * -1 }));
   };
 
   // 按下百分比
@@ -72,26 +71,24 @@ const Calculator = () => {
       return;
     }
 
-    dispatch(setDisplayValue({ val: currentValue / 100 }));
+    dispatch(setValue({ displayValue: currentValue / 100 }));
   };
 
   // 按下小數點
   const inputDot = () => {
     // 先判斷目前是否有小數點了
     if (!/\./.test(displayValue)) {
-      dispatch(setDisplayValue({ val: displayValue + '.' }));
       // TODO: 如果 waitingForOperand 為 true 的情況下按下小數點按鍵應該顯示 0.
-      setWaitingForOperand(false);
+      dispatch(setValue({ displayValue: displayValue + '.', waitingForOperand: false }));
     }
   };
 
   // 按下數字
   const inputDigit = digit => {
     if (waitingForOperand) {
-      dispatch(setDisplayValue({ val: String(digit) }));
-      setWaitingForOperand(false);
+      dispatch(setValue({ displayValue: String(digit), waitingForOperand: false }));
     } else {
-      dispatch(setDisplayValue({ val: displayValue === '0' ? String(digit) : displayValue + digit }));
+      dispatch(setValue({ displayValue: displayValue === '0' ? String(digit) : displayValue + digit }));
     }
   };
 
@@ -100,16 +97,16 @@ const Calculator = () => {
     const inputValue = parseFloat(displayValue);
 
     if (value == null) {
-      dispatch(setValueFromOperation({ value: inputValue, displayValue, operator: nextOperator }));
+      dispatch(setValue({ value: inputValue, displayValue, operator: nextOperator, waitingForOperand: true }));
     } else if (operator) {
       // 如果先前已經按過其他四則運算，則先處理
       const currentValue = value || 0;
       const newValue = CalculatorOperations[operator](currentValue, inputValue);
 
-      dispatch(setValueFromOperation({ value: newValue, displayValue: String(newValue), operator: nextOperator }));
+      dispatch(
+        setValue({ value: newValue, displayValue: String(newValue), operator: nextOperator, waitingForOperand: true }),
+      );
     }
-
-    setWaitingForOperand(true); // 按下四則運算後，再輸入數字的話要清空顯示區域
   };
 
   const handleKeyDown = event => {

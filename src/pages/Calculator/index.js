@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { makeStyles } from '@material-ui/styles';
 
@@ -13,16 +13,33 @@ import GradientIcon from '@material-ui/icons/Gradient';
 const CalculatorPage = () => {
   const classes = useStyles();
 
+  const [openingCalculator, setOpeningCalculator] = useState(false); // 是否開啟計算機
+
+  const handleClick = () => {
+    setOpeningCalculator(openingCalculator => {
+      return !openingCalculator;
+    });
+  };
+
   return (
     <div>
-      <Button className="mt-2 ml-2" variant="contained" color="primary" size="large" startIcon={<GradientIcon />}>
+      <Button
+        className="mt-2 ml-2"
+        variant="contained"
+        color="primary"
+        size="large"
+        startIcon={<GradientIcon />}
+        onClick={handleClick}
+      >
         打開計算機
       </Button>
-      <Draggable>
-        <div className={classes.calculator}>
-          <Calculator />
-        </div>
-      </Draggable>
+      {openingCalculator && (
+        <Draggable>
+          <div className={classes.calculator}>
+            <Calculator />
+          </div>
+        </Draggable>
+      )}
     </div>
   );
 };
