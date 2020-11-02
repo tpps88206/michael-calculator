@@ -1,10 +1,15 @@
 const styles = theme => ({
   autoScalingText: {
     padding: '0 30px',
-    position: 'absolute',
     right: 0,
     transformOrigin: 'right',
-    display: 'inline-block',
+  },
+  '@media screen and (max-width: 768px)': {
+    autoScalingText: {
+      padding: '0 10px',
+      right: 0,
+      transformOrigin: 'right',
+    },
   },
 });
 

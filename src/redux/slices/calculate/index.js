@@ -17,8 +17,8 @@ const slice = createSlice({
     },
     // 設定值
     setValue: (state, action) => {
-      const { value, displayValue, operator, waitingForOperand } = action.payload;
-      return { ...state, value, displayValue, operator, waitingForOperand };
+      const { payload } = action;
+      return { ...state, ...payload };
     },
   },
 });

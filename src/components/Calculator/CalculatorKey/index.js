@@ -15,11 +15,18 @@ const CalculatorKey = ({ onPress, variant, className, ...props }) => {
   return (
     <PointTarget onPoint={onPress}>
       <button
-        className={classNames(className, classes.calculatorKey, {
-          [classes.operatorKey]: variant === 'operator-key',
-          [classes.digitKey]: variant === 'digit-key',
-          [classes.functionKey]: variant === 'function-key',
-        })}
+        className={classNames(
+          className,
+          classes.calculatorKey,
+          {
+            [classes.operatorKey]: variant === 'operator-key',
+            [classes.digitKey]: variant === 'digit-key',
+            [classes.functionKey]: variant === 'function-key',
+          },
+          'd-block',
+          'w-100',
+          'h-100',
+        )}
         {...props}
       />
     </PointTarget>

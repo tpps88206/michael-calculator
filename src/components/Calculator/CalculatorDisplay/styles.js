@@ -1,7 +1,7 @@
 const styles = theme => ({
   calculatorDisplay: {
+    height: '20%',
     color: 'white',
-    paddingTop: '70px',
     fontSize: '6.5em',
     flex: 1,
   },

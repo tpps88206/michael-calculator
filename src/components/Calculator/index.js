@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import classNames from 'classnames';
+
+import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
 import AddIcon from '@material-ui/icons/Add';
 import ClearIcon from '@material-ui/icons/Clear';
@@ -139,82 +142,132 @@ const Calculator = () => {
   };
 
   return (
-    <div className={classes.calculator}>
+    <div className={classNames(classes.calculator, 'pa-1 h-100 w-100')}>
       <CalculatorDisplay value={displayValue} />
       <div className={classes.calculatorKeypad}>
-        <div className={classes.inputKeys}>
-          <div className={classes.functionKeys}>
-            <CalculatorKey variant="function-key" onPress={() => reset()}>
-              {displayValue !== '0' ? 'C' : 'AC'}
-            </CalculatorKey>
-            <CalculatorKey variant="function-key" onPress={() => toggleSign()}>
-              <Icon>
-                <img src={ToggleSvg} alt="equal" width="36" height="36" />
-              </Icon>
-            </CalculatorKey>
-            <CalculatorKey variant="function-key" onPress={() => inputPercent()}>
-              <Icon>
-                <img src={PercentSvg} alt="equal" width="32" height="32" />
-              </Icon>
-            </CalculatorKey>
-          </div>
-          <div className={classes.digitKeys}>
-            <CalculatorKey className={classes.key0} variant="digit-key" onPress={() => inputDigit(0)}>
-              0
-            </CalculatorKey>
-            <CalculatorKey className={classes.keyDot} variant="digit-key" onPress={() => inputDot()}>
-              ●
-            </CalculatorKey>
-            <CalculatorKey variant="digit-key" onPress={() => inputDigit(1)}>
-              1
-            </CalculatorKey>
-            <CalculatorKey variant="digit-key" onPress={() => inputDigit(2)}>
-              2
-            </CalculatorKey>
-            <CalculatorKey variant="digit-key" onPress={() => inputDigit(3)}>
-              3
-            </CalculatorKey>
-            <CalculatorKey variant="digit-key" onPress={() => inputDigit(4)}>
-              4
-            </CalculatorKey>
-            <CalculatorKey variant="digit-key" onPress={() => inputDigit(5)}>
-              5
-            </CalculatorKey>
-            <CalculatorKey variant="digit-key" onPress={() => inputDigit(6)}>
-              6
-            </CalculatorKey>
-            <CalculatorKey variant="digit-key" onPress={() => inputDigit(7)}>
-              7
-            </CalculatorKey>
-            <CalculatorKey variant="digit-key" onPress={() => inputDigit(8)}>
-              8
-            </CalculatorKey>
-            <CalculatorKey variant="digit-key" onPress={() => inputDigit(9)}>
-              9
-            </CalculatorKey>
-          </div>
-        </div>
-        <div className={classes.operatorKeys}>
-          <CalculatorKey variant="operator-key" onPress={() => performOperation('/')}>
-            <Icon>
-              <img src={DivisionSvg} alt="division" width="32" height="32" />
-            </Icon>
-          </CalculatorKey>
-          <CalculatorKey variant="operator-key" onPress={() => performOperation('*')}>
-            <ClearIcon style={{ fontSize: 56 }} />
-          </CalculatorKey>
-          <CalculatorKey variant="operator-key" onPress={() => performOperation('-')}>
-            <RemoveIcon style={{ fontSize: 56 }} />
-          </CalculatorKey>
-          <CalculatorKey variant="operator-key" onPress={() => performOperation('+')}>
-            <AddIcon style={{ fontSize: 56 }} />
-          </CalculatorKey>
-          <CalculatorKey variant="operator-key" onPress={() => performOperation('=')}>
-            <Icon>
-              <img src={EqualSvg} alt="equal" width="32" height="32" />
-            </Icon>
-          </CalculatorKey>
-        </div>
+        <Grid container spacing={2} className="h-100">
+          <Grid item xs={9}>
+            <div className="h-100">
+              <div className={classes.functionKeys}>
+                <Grid container spacing={2} className="h-100">
+                  <Grid item xs={4}>
+                    <CalculatorKey variant="function-key" onPress={() => reset()}>
+                      {displayValue !== '0' ? 'C' : 'AC'}
+                    </CalculatorKey>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <CalculatorKey variant="function-key" onPress={() => toggleSign()}>
+                      <Icon>
+                        <img src={ToggleSvg} alt="equal" width="36" height="36" />
+                      </Icon>
+                    </CalculatorKey>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <CalculatorKey variant="function-key" onPress={() => inputPercent()}>
+                      <Icon>
+                        <img src={PercentSvg} alt="equal" width="32" height="32" />
+                      </Icon>
+                    </CalculatorKey>
+                  </Grid>
+                </Grid>
+              </div>
+              <div className={classNames(classes.digitKeys, 'mt-1')}>
+                <Grid container spacing={2} className="h-100">
+                  <Grid item xs={4}>
+                    <CalculatorKey variant="digit-key" onPress={() => inputDigit(7)}>
+                      7
+                    </CalculatorKey>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <CalculatorKey variant="digit-key" onPress={() => inputDigit(8)}>
+                      8
+                    </CalculatorKey>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <CalculatorKey variant="digit-key" onPress={() => inputDigit(9)}>
+                      9
+                    </CalculatorKey>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <CalculatorKey variant="digit-key" onPress={() => inputDigit(4)}>
+                      4
+                    </CalculatorKey>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <CalculatorKey variant="digit-key" onPress={() => inputDigit(5)}>
+                      5
+                    </CalculatorKey>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <CalculatorKey variant="digit-key" onPress={() => inputDigit(6)}>
+                      6
+                    </CalculatorKey>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <CalculatorKey variant="digit-key" onPress={() => inputDigit(1)}>
+                      1
+                    </CalculatorKey>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <CalculatorKey variant="digit-key" onPress={() => inputDigit(2)}>
+                      2
+                    </CalculatorKey>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <CalculatorKey variant="digit-key" onPress={() => inputDigit(3)}>
+                      3
+                    </CalculatorKey>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <CalculatorKey className={classes.key0} variant="digit-key" onPress={() => inputDigit(0)}>
+                      0
+                    </CalculatorKey>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <CalculatorKey className={classes.keyDot} variant="digit-key" onPress={() => inputDot()}>
+                      ●
+                    </CalculatorKey>
+                  </Grid>
+                </Grid>
+              </div>
+            </div>
+          </Grid>
+          <Grid item xs={3}>
+            <div className="h-100">
+              <Grid container spacing={2} className="h-100">
+                <Grid item xs={12}>
+                  <CalculatorKey variant="operator-key" onPress={() => performOperation('/')}>
+                    <Icon>
+                      <img src={DivisionSvg} alt="division" width="30" height="30" />
+                    </Icon>
+                  </CalculatorKey>
+                </Grid>
+                <Grid item xs={12}>
+                  <CalculatorKey variant="operator-key" onPress={() => performOperation('*')}>
+                    <ClearIcon style={{ fontSize: '1em' }} />
+                  </CalculatorKey>
+                </Grid>
+                <Grid item xs={12}>
+                  <CalculatorKey variant="operator-key" onPress={() => performOperation('-')}>
+                    <RemoveIcon style={{ fontSize: '1em' }} />
+                  </CalculatorKey>
+                </Grid>
+                <Grid item xs={12}>
+                  <CalculatorKey variant="operator-key" onPress={() => performOperation('+')}>
+                    <AddIcon style={{ fontSize: '1em' }} />
+                  </CalculatorKey>
+                </Grid>
+                <Grid item xs={12}>
+                  <CalculatorKey variant="operator-key" onPress={() => performOperation('=')}>
+                    <Icon>
+                      <img src={EqualSvg} alt="equal" width="26" height="26" />
+                    </Icon>
+                  </CalculatorKey>
+                </Grid>
+              </Grid>
+            </div>
+          </Grid>
+        </Grid>
       </div>
     </div>
   );
