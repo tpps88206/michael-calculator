@@ -15,9 +15,11 @@ const styles = theme => ({
   },
   keyDot: {
     fontSize: '0.75em !important',
+    paddingTop: '30%',
   },
   key0: {
     borderRadius: '40px !important',
+    paddingLeft: '16%',
   },
 });
 

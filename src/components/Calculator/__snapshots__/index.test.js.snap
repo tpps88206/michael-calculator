@@ -178,7 +178,7 @@ exports[`renders Calculator with snapshot 1`] = `
                   class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8"
                 >
                   <button
-                    class="makeStyles-key0-18 makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
+                    class="makeStyles-key0-18 text-left makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
                     id="Key0"
                   >
                     0

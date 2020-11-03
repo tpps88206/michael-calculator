@@ -39,7 +39,6 @@ const Calculator = () => {
   const operator = useSelector(state => state.calculate.operator);
   const waitingForOperand = useSelector(state => state.calculate.waitingForOperand);
 
-  // TODO: 有時候按鍵會失效
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     return () => {
@@ -81,7 +80,6 @@ const Calculator = () => {
   const inputDot = () => {
     // 先判斷目前是否有小數點了
     if (!/\./.test(displayValue)) {
-      // TODO: 如果 waitingForOperand 為 true 的情況下按下小數點按鍵應該顯示 0.
       dispatch(setValue({ displayValue: displayValue + '.', waitingForOperand: false }));
     }
   };
@@ -219,7 +217,12 @@ const Calculator = () => {
                     </CalculatorKey>
                   </Grid>
                   <Grid item xs={8}>
-                    <CalculatorKey className={classes.key0} id="Key0" variant="digit-key" onPress={() => inputDigit(0)}>
+                    <CalculatorKey
+                      className={classNames(classes.key0, 'text-left')}
+                      id="Key0"
+                      variant="digit-key"
+                      onPress={() => inputDigit(0)}
+                    >
                       0
                     </CalculatorKey>
                   </Grid>

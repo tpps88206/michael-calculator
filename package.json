@@ -32,7 +32,7 @@
   "scripts": {
     "start": "REACT_APP_FLAVOR=dev && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
+    "test": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "flow": "flow check",
     "lint": "eslint src --quiet"
@@ -78,5 +78,12 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": "yarn run lint --fix"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.js",
+      "src/pages/**/*.js",
+      "!src/**/styles.js"
+    ]
   }
 }

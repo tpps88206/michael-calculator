@@ -14,7 +14,6 @@ const AutoScalingText = ({ children }) => {
   const [scale, setScale] = useState(1);
   const nodeRef = useRef(null);
 
-  // TODO: 瀏覽器大小縮放時，顯示區域需要改變大小
   useEffect(() => {
     const parentNode = nodeRef.current.parentNode; // 取得顯示區域的父類別元素
     const availableWidth = parentNode.offsetWidth; // 取得父類別元素佔用的寬度

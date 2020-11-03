@@ -24,8 +24,6 @@ jss.createStyleSheet(styles(muiTheme), { meta: 'global' }).attach();
 
 const root = document.getElementById('root');
 
-// TODO: use SSR
-
 !!root &&
   render(
     <StylesProvider jss={jss}>
