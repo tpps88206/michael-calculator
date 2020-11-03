@@ -12,8 +12,6 @@ const NotFound = ({ redirect }) => {
     }
   }, []);
 
-  // TODO: finish not found page layout
-
   return (
     <div className="mt-2">
       <Typography variant="h5">Page Not Found</Typography>

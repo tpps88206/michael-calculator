@@ -1,21 +1,20 @@
 import React from 'react';
-import { Router } from 'react-router';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import { createBrowserHistory } from 'history';
+import { ConnectedRouter } from 'connected-react-router';
 
-import Root from './routes';
+import configureStore, { history } from './redux/configureStore';
+import Router from './routes';
 
-const history = createBrowserHistory();
+const store = configureStore();
 
 const APP = () => {
   return (
-    <Router history={history}>
-      <Switch>
-        <Route path="/" component={Root} />
-        <Redirect to="/" />
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <Router />
+      </ConnectedRouter>
+    </Provider>
   );
 };
 

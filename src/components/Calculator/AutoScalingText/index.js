@@ -36,6 +36,7 @@ const AutoScalingText = ({ children }) => {
 
   return (
     <div
+      id="AutoScalingText"
       className={classNames(classes.autoScalingText, 'position-absolute d-inline-block')}
       style={{ transform: `scale(${scale},${scale})` }}
       ref={nodeRef}

@@ -151,19 +151,19 @@ const Calculator = () => {
               <div className={classes.functionKeys}>
                 <Grid container spacing={2} className="h-100">
                   <Grid item xs={4}>
-                    <CalculatorKey variant="function-key" onPress={() => reset()}>
+                    <CalculatorKey variant="function-key" id="Reset" onPress={() => reset()}>
                       {displayValue !== '0' ? 'C' : 'AC'}
                     </CalculatorKey>
                   </Grid>
                   <Grid item xs={4}>
-                    <CalculatorKey variant="function-key" onPress={() => toggleSign()}>
+                    <CalculatorKey variant="function-key" id="ToggleSign" onPress={() => toggleSign()}>
                       <Icon>
                         <img src={ToggleSvg} alt="equal" width="36" height="36" />
                       </Icon>
                     </CalculatorKey>
                   </Grid>
                   <Grid item xs={4}>
-                    <CalculatorKey variant="function-key" onPress={() => inputPercent()}>
+                    <CalculatorKey variant="function-key" id="Percent" onPress={() => inputPercent()}>
                       <Icon>
                         <img src={PercentSvg} alt="equal" width="32" height="32" />
                       </Icon>
@@ -219,12 +219,12 @@ const Calculator = () => {
                     </CalculatorKey>
                   </Grid>
                   <Grid item xs={8}>
-                    <CalculatorKey className={classes.key0} variant="digit-key" onPress={() => inputDigit(0)}>
+                    <CalculatorKey className={classes.key0} id="Key0" variant="digit-key" onPress={() => inputDigit(0)}>
                       0
                     </CalculatorKey>
                   </Grid>
                   <Grid item xs={4}>
-                    <CalculatorKey className={classes.keyDot} variant="digit-key" onPress={() => inputDot()}>
+                    <CalculatorKey className={classes.keyDot} id="Dot" variant="digit-key" onPress={() => inputDot()}>
                       ●
                     </CalculatorKey>
                   </Grid>
@@ -236,29 +236,29 @@ const Calculator = () => {
             <div className="h-100">
               <Grid container spacing={2} className="h-100">
                 <Grid item xs={12}>
-                  <CalculatorKey variant="operator-key" onPress={() => performOperation('/')}>
+                  <CalculatorKey variant="operator-key" id="DividedBy" onPress={() => performOperation('/')}>
                     <Icon>
                       <img src={DivisionSvg} alt="division" width="30" height="30" />
                     </Icon>
                   </CalculatorKey>
                 </Grid>
                 <Grid item xs={12}>
-                  <CalculatorKey variant="operator-key" onPress={() => performOperation('*')}>
+                  <CalculatorKey variant="operator-key" id="Multiply" onPress={() => performOperation('*')}>
                     <ClearIcon style={{ fontSize: '1em' }} />
                   </CalculatorKey>
                 </Grid>
                 <Grid item xs={12}>
-                  <CalculatorKey variant="operator-key" onPress={() => performOperation('-')}>
+                  <CalculatorKey variant="operator-key" id="Sub" onPress={() => performOperation('-')}>
                     <RemoveIcon style={{ fontSize: '1em' }} />
                   </CalculatorKey>
                 </Grid>
                 <Grid item xs={12}>
-                  <CalculatorKey variant="operator-key" onPress={() => performOperation('+')}>
+                  <CalculatorKey variant="operator-key" id="Add" onPress={() => performOperation('+')}>
                     <AddIcon style={{ fontSize: '1em' }} />
                   </CalculatorKey>
                 </Grid>
                 <Grid item xs={12}>
-                  <CalculatorKey variant="operator-key" onPress={() => performOperation('=')}>
+                  <CalculatorKey variant="operator-key" id="Equals" onPress={() => performOperation('=')}>
                     <Icon>
                       <img src={EqualSvg} alt="equal" width="26" height="26" />
                     </Icon>

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders AutoScalingText with snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="makeStyles-autoScalingText-2 position-absolute d-inline-block"
+    id="AutoScalingText"
+    style="transform: scale(1,1);"
+  />
+</DocumentFragment>
+`;

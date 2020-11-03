@@ -1,0 +1,317 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Calculator with snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="makeStyles-calculator-16 pa-1 w-100"
+    id="calculator-main-section"
+  >
+    <div
+      class="makeStyles-calculatorDisplay-19"
+    >
+      <div
+        class="makeStyles-autoScalingText-20 position-absolute d-inline-block"
+        id="AutoScalingText"
+        style="transform: scale(1,1);"
+      >
+        0
+      </div>
+    </div>
+    <div
+      class="makeStyles-calculatorKeypad-15"
+    >
+      <div
+        class="MuiGrid-root h-100 MuiGrid-container MuiGrid-spacing-xs-2"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-9"
+        >
+          <div
+            class="h-100"
+          >
+            <div
+              class="makeStyles-functionKeys-13"
+            >
+              <div
+                class="MuiGrid-root h-100 MuiGrid-container MuiGrid-spacing-xs-2"
+              >
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-calculatorKey-24 makeStyles-functionKey-23 d-block w-100 h-100"
+                    id="Reset"
+                  >
+                    AC
+                  </button>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-calculatorKey-24 makeStyles-functionKey-23 d-block w-100 h-100"
+                    id="ToggleSign"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="material-icons MuiIcon-root"
+                    >
+                      <img
+                        alt="equal"
+                        height="36"
+                        src="toggle.svg"
+                        width="36"
+                      />
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-calculatorKey-24 makeStyles-functionKey-23 d-block w-100 h-100"
+                    id="Percent"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="material-icons MuiIcon-root"
+                    >
+                      <img
+                        alt="equal"
+                        height="32"
+                        src="percent.svg"
+                        width="32"
+                      />
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="makeStyles-digitKeys-14 mt-1"
+            >
+              <div
+                class="MuiGrid-root h-100 MuiGrid-container MuiGrid-spacing-xs-2"
+              >
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
+                  >
+                    7
+                  </button>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
+                  >
+                    8
+                  </button>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
+                  >
+                    9
+                  </button>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
+                  >
+                    4
+                  </button>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
+                  >
+                    5
+                  </button>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
+                  >
+                    6
+                  </button>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
+                  >
+                    1
+                  </button>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
+                  >
+                    2
+                  </button>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
+                  >
+                    3
+                  </button>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-8"
+                >
+                  <button
+                    class="makeStyles-key0-18 makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
+                    id="Key0"
+                  >
+                    0
+                  </button>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+                >
+                  <button
+                    class="makeStyles-keyDot-17 makeStyles-calculatorKey-24 makeStyles-digitKey-22 d-block w-100 h-100"
+                    id="Dot"
+                  >
+                    ●
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
+        >
+          <div
+            class="h-100"
+          >
+            <div
+              class="MuiGrid-root h-100 MuiGrid-container MuiGrid-spacing-xs-2"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <button
+                  class="makeStyles-calculatorKey-24 makeStyles-operatorKey-21 d-block w-100 h-100"
+                  id="DividedBy"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="material-icons MuiIcon-root"
+                  >
+                    <img
+                      alt="division"
+                      height="30"
+                      src="division.svg"
+                      width="30"
+                    />
+                  </span>
+                </button>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <button
+                  class="makeStyles-calculatorKey-24 makeStyles-operatorKey-21 d-block w-100 h-100"
+                  id="Multiply"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    style="font-size: 1em;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <button
+                  class="makeStyles-calculatorKey-24 makeStyles-operatorKey-21 d-block w-100 h-100"
+                  id="Sub"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    style="font-size: 1em;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 13H5v-2h14v2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <button
+                  class="makeStyles-calculatorKey-24 makeStyles-operatorKey-21 d-block w-100 h-100"
+                  id="Add"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    style="font-size: 1em;"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+              >
+                <button
+                  class="makeStyles-calculatorKey-24 makeStyles-operatorKey-21 d-block w-100 h-100"
+                  id="Equals"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="material-icons MuiIcon-root"
+                  >
+                    <img
+                      alt="equal"
+                      height="26"
+                      src="equal.svg"
+                      width="26"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

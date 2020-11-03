@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CalculatorDisplay with snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="makeStyles-calculatorDisplay-3"
+  >
+    <div
+      class="makeStyles-autoScalingText-4 position-absolute d-inline-block"
+      id="AutoScalingText"
+      style="transform: scale(1,1);"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CalculatorKey with snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="makeStyles-calculatorKey-8 d-block w-100 h-100"
+  />
+</DocumentFragment>
+`;
