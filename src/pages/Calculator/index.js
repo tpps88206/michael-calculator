@@ -21,7 +21,12 @@ const CalculatorPage = () => {
   const [mobile, setMobile] = useState(false); // 是否為行動裝置
 
   useEffect(() => {
-    handleRWD();
+    window.addEventListener('resize', handleRWD); // 解析度改變時，檢查裝置類型和裝置大小
+    handleRWD(); // 第一次進到頁面先做一次
+
+    return () => {
+      window.removeEventListener('resize', handleRWD);
+    };
   }, []);
 
   const handleRWD = () => {
