@@ -17,6 +17,7 @@ const styles = theme => ({
     },
   },
   calculatorKey: {
+    padding: 0,
     fontFamily: 'inherit',
     borderRadius: '50%',
     userSelect: 'none',
