@@ -45,21 +45,24 @@ exports[`renders CalculatorPage with snapshot 1`] = `
           >
             React Calculator
           </h1>
-          <img
-            alt="CI/CD"
-            src="https://github.com/tpps88206/calculator/workflows/CI/CD/badge.svg"
-          />
-          <a
-            href="https://codecov.io/gh/tpps88206/calculator"
-          />
-          <img
-            alt="Codecov"
-            src="https://img.shields.io/codecov/c/github/tpps88206/calculator"
-          />
-          <img
-            alt="License"
-            src="https://img.shields.io/github/license/tpps88206/calculator"
-          />
+          <p>
+            <img
+              alt="CI/CD"
+              src="https://github.com/tpps88206/calculator/workflows/CI/CD/badge.svg"
+            />
+            <a
+              href="https://codecov.io/gh/tpps88206/calculator"
+            >
+              <img
+                alt="Codecov"
+                src="https://img.shields.io/codecov/c/github/tpps88206/calculator"
+              />
+            </a>
+            <img
+              alt="License"
+              src="https://img.shields.io/github/license/tpps88206/calculator"
+            />
+          </p>
         </div>
       </div>
       <div
