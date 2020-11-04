@@ -209,7 +209,7 @@ const CalculatorPage = () => {
           </div>
         )
       ) : (
-        <Dialog open={open} onClose={handleClose} PaperComponent={PaperComponent}>
+        <Dialog open={open} onClose={handleClose} PaperComponent={PaperComponent} hideBackdrop>
           <Calculator />
         </Dialog>
       )}
