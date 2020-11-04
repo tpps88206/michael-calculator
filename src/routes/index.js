@@ -9,7 +9,7 @@ const Router = () => {
   return (
     <Suspense fallback={<Progress message="Loading..." />}>
       <Switch>
-        <Route path="/" component={CalculatorRouter} />
+        <Route path={process.env.PUBLIC_URL + '/'} component={CalculatorRouter} />
       </Switch>
     </Suspense>
   );
