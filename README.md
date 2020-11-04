@@ -55,8 +55,6 @@ $ yarn start
 
 ![](docs/demo3.gif)
 
-![](docs/demo4.gif)
-
 ## Unit test report
 
 ![](docs/report.png)

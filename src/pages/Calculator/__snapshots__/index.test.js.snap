@@ -91,59 +91,6 @@ exports[`renders CalculatorPage with snapshot 1`] = `
         class="MuiCardContent-root"
       >
         <h2
-          id="setup"
-        >
-          Setup
-        </h2>
-        <pre>
-          <code>
-            <span
-              class="hljs-variable"
-            >
-              $ 
-            </span>
-            git clone 
-            <span
-              class="hljs-symbol"
-            >
-              https:
-            </span>
-            /
-            <span
-              class="hljs-regexp"
-            >
-              /github.com/tpps
-            </span>
-            88206/calculator.git
-            <span
-              class="hljs-variable"
-            >
-              $ 
-            </span>
-            cd calculator/
-            <span
-              class="hljs-variable"
-            >
-              $ 
-            </span>
-            yarn install
-            <span
-              class="hljs-variable"
-            >
-              $ 
-            </span>
-            yarn start
-          </code>
-        </pre>
-      </div>
-    </div>
-    <div
-      class="MuiPaper-root MuiCard-root mx-2 my-2 MuiPaper-elevation1 MuiPaper-rounded"
-    >
-      <div
-        class="MuiCardContent-root"
-      >
-        <h2
           id="technologies"
         >
           Technologies

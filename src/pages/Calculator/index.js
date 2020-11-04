@@ -92,20 +92,6 @@ const CalculatorPage = () => {
         </Card>
         <Card className="mx-2 my-2">
           <CardContent>
-            <h2 id="setup">Setup</h2>
-            <pre>
-              <code>
-                <span className="hljs-variable">$ </span>git clone <span className="hljs-symbol">https:</span>/
-                <span className="hljs-regexp">/github.com/tpps</span>88206/calculator.git
-                <span className="hljs-variable">$ </span>cd calculator/
-                <span className="hljs-variable">$ </span>yarn install
-                <span className="hljs-variable">$ </span>yarn start
-              </code>
-            </pre>
-          </CardContent>
-        </Card>
-        <Card className="mx-2 my-2">
-          <CardContent>
             <h2 id="technologies">Technologies</h2>
             <ul>
               <li>
