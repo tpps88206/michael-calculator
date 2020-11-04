@@ -3,34 +3,363 @@
 exports[`renders CalculatorPage with snapshot 1`] = `
 <DocumentFragment>
   <div>
-    <button
-      class="MuiButtonBase-root MuiButton-root MuiButton-contained mt-2 ml-2 MuiButton-containedPrimary MuiButton-containedSizeLarge MuiButton-sizeLarge"
-      tabindex="0"
-      type="button"
+    <div
+      class=""
     >
-      <span
-        class="MuiButton-label"
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained mt-2 ml-2 MuiButton-containedPrimary MuiButton-containedSizeLarge MuiButton-sizeLarge"
+        tabindex="0"
+        type="button"
       >
         <span
-          class="MuiButton-startIcon MuiButton-iconSizeLarge"
+          class="MuiButton-label"
         >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <span
+            class="MuiButton-startIcon MuiButton-iconSizeLarge"
           >
-            <path
-              d="M11 9h2v2h-2zm-2 2h2v2H9zm4 0h2v2h-2zm2-2h2v2h-2zM7 9h2v2H7zm12-6H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 18H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm2-7h-2v2h2v2h-2v-2h-2v2h-2v-2h-2v2H9v-2H7v2H5v-2h2v-2H5V5h14v6z"
-            />
-          </svg>
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11 9h2v2h-2zm-2 2h2v2H9zm4 0h2v2h-2zm2-2h2v2h-2zM7 9h2v2H7zm12-6H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 18H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm2-7h-2v2h2v2h-2v-2h-2v2h-2v-2h-2v2H9v-2H7v2H5v-2h2v-2H5V5h14v6z"
+              />
+            </svg>
+          </span>
+          打開計算機
         </span>
-        打開計算機
-      </span>
-      <span
-        class="MuiTouchRipple-root"
-      />
-    </button>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <div
+        class="MuiPaper-root MuiCard-root mx-2 my-2 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardContent-root"
+        >
+          <h1
+            id="react-calculator"
+          >
+            React Calculator
+          </h1>
+          <img
+            alt="CI/CD"
+            src="https://github.com/tpps88206/calculator/workflows/CI/CD/badge.svg"
+          />
+          <a
+            href="https://codecov.io/gh/tpps88206/calculator"
+          />
+          <img
+            alt="Codecov"
+            src="https://img.shields.io/codecov/c/github/tpps88206/calculator"
+          />
+          <img
+            alt="License"
+            src="https://img.shields.io/github/license/tpps88206/calculator"
+          />
+        </div>
+      </div>
+      <div
+        class="MuiPaper-root MuiCard-root mx-2 my-2 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardContent-root"
+        >
+          <h2
+            id="demo"
+          >
+            Demo
+          </h2>
+          <p>
+            <a
+              href="https://tpps88206.github.io/calculator/"
+            >
+              https://tpps88206.github.io/calculator/
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        class="MuiPaper-root MuiCard-root mx-2 my-2 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardContent-root"
+        >
+          <h2
+            id="setup"
+          >
+            Setup
+          </h2>
+          <pre>
+            <code>
+              <span
+                class="hljs-variable"
+              >
+                $ 
+              </span>
+              git clone 
+              <span
+                class="hljs-symbol"
+              >
+                https:
+              </span>
+              /
+              <span
+                class="hljs-regexp"
+              >
+                /github.com/tpps
+              </span>
+              88206/calculator.git
+              <span
+                class="hljs-variable"
+              >
+                $ 
+              </span>
+              cd calculator/
+              <span
+                class="hljs-variable"
+              >
+                $ 
+              </span>
+              yarn install
+              <span
+                class="hljs-variable"
+              >
+                $ 
+              </span>
+              yarn start
+            </code>
+          </pre>
+        </div>
+      </div>
+      <div
+        class="MuiPaper-root MuiCard-root mx-2 my-2 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardContent-root"
+        >
+          <h2
+            id="technologies"
+          >
+            Technologies
+          </h2>
+          <ul>
+            <li>
+              Use 
+              <strong>
+                React Hook
+              </strong>
+            </li>
+            <li>
+              Develop state management with 
+              <a
+                href="https://redux.js.org/"
+              >
+                Redux
+              </a>
+               and 
+              <a
+                href="https://redux-toolkit.js.org/"
+              >
+                Redux Toolkit
+              </a>
+              .
+            </li>
+            <li>
+              Develop CSS style with 
+              <a
+                href="https://material-ui.com/styles/basics/"
+              >
+                @material-ui/styles
+              </a>
+            </li>
+            <li>
+              Develop router management with 
+              <a
+                href="https://github.com/ReactTraining/react-router"
+              >
+                React Router
+              </a>
+              .
+            </li>
+            <li>
+              Write unit test with 
+              <strong>
+                testing-library
+              </strong>
+              .
+            </li>
+            <li>
+              Use 
+              <a
+                href="https://github.com/features/actions"
+              >
+                Github Actions
+              </a>
+               to implement CI/CD and deploy on 
+              <strong>
+                Github Page
+              </strong>
+              .
+            </li>
+            <li>
+              Use 
+              <a
+                href="https://material-ui.com/zh/"
+              >
+                Material UI
+              </a>
+               to generate the beautiful components with Material Design.
+            </li>
+            <li>
+              Use 
+              <strong>
+                OOCSS
+              </strong>
+               to manage the general CSS style, it is following 
+              <a
+                href="https://getbootstrap.com/"
+              >
+                Bootstrap
+              </a>
+              .
+            </li>
+            <li>
+              Use 
+              <a
+                href="https://github.com/ReactTraining/react-point"
+              >
+                react-point
+              </a>
+               to handle touch events.
+            </li>
+            <li>
+              Use 
+              <a
+                href="https://github.com/STRML/react-draggable"
+              >
+                react-draggable
+              </a>
+               to handle Drag and Drop.
+            </li>
+            <li>
+              Use 
+              <a
+                href="https://lodash.com/"
+              >
+                Lodash
+              </a>
+               to control logic methods.
+            </li>
+            <li>
+              Use 
+              <a
+                href="https://github.com/JedWatson/classnames"
+              >
+                Classnames
+              </a>
+               to manage CSS class name.
+            </li>
+            <li>
+              Use 
+              <a
+                href="https://typicode.github.io/husky/#/"
+              >
+                Husky
+              </a>
+               to handle pre-commit event.
+            </li>
+            <li>
+              All icons are using 
+              <a
+                href="https://material-ui.com/components/material-icons/"
+              >
+                Material Icon
+              </a>
+               or 
+              <strong>
+                SVG
+              </strong>
+              .
+            </li>
+            <li>
+              Define coding style with 
+              <a
+                href="https://prettier.io/"
+              >
+                Prettier
+              </a>
+               and 
+              <strong>
+                Eslint
+              </strong>
+              .
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="MuiPaper-root MuiCard-root mx-2 my-2 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardContent-root"
+        >
+          <h2
+            id="features"
+          >
+            Features
+          </h2>
+          <ul>
+            <li>
+              Implement the general functions of calculator.
+            </li>
+            <li>
+              In the desktop
+              <ul>
+                <li>
+                  The width of calculator will fix in 
+                  <code>
+                    480px
+                  </code>
+                  .
+                </li>
+                <li>
+                  But when the browser width is smaller than 768px, the width of calculator will fix in 
+                  <code>
+                    360px
+                  </code>
+                  .
+                </li>
+                <li>
+                  We can drag and drop the calculator to everywhere.
+                </li>
+              </ul>
+            </li>
+            <li>
+              In the mobile 
+              <ul>
+                <li>
+                  Calculator will fix below, and the height is 
+                  <code>
+                    50%
+                  </code>
+                   of the browser.
+                </li>
+                <li>
+                  We can not drag and drop but we can scroll it.
+                </li>
+              </ul>
+            </li>
+            <li>
+              We can open calculator with clicking button and close it with clicking outside.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
