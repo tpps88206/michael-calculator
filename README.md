@@ -14,7 +14,7 @@ https://tpps88206.github.io/calculator/
 
 ```
 $ git clone https://github.com/tpps88206/calculator.git
-$ ch calculator/
+$ cd calculator/
 $ yarn install
 $ yarn start
 ```
@@ -40,11 +40,13 @@ $ yarn start
 ## Features
 
 * Implement the general functions of calculator.
-* In the desktop, the width of calculator will fix in `480px`. 
-* But when the browser width is smaller than 768px, the width of calculator will fix in `360px`.
-* In the desktop, we can drag and drop the calculator to everywhere.
-* In the mobile, calculator will fix below, and the height is `50%` of the browser.
-* In the mobile, we can not drag and drop but we can scroll it.
+* In the desktop
+    * The width of calculator will fix in `480px`. 
+    * But when the browser width is smaller than 768px, the width of calculator will fix in `360px`.
+    * We can drag and drop the calculator to everywhere.
+* In the mobile    
+    * Calculator will fix below, and the height is `50%` of the browser.
+    * We can not drag and drop but we can scroll it.
 * We can open calculator with clicking button and close it with clicking outside.
 
 ![](docs/demo1.gif)
