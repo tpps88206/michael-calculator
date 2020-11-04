@@ -14,21 +14,13 @@ import DivisionSvg from '../../assets/division.svg';
 import EqualSvg from '../../assets/equal.svg';
 import PercentSvg from '../../assets/percent.svg';
 import ToggleSvg from '../../assets/toggle.svg';
+import constant from '../../constants/constant';
 import { clearAll, setValue } from '../../redux/slices/calculate';
 import CalculatorDisplay from './CalculatorDisplay';
 import CalculatorKey from './CalculatorKey';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
-
-// 定義四則運算方法
-const CalculatorOperations = {
-  '/': (prevValue, nextValue) => prevValue / nextValue,
-  '*': (prevValue, nextValue) => prevValue * nextValue,
-  '+': (prevValue, nextValue) => prevValue + nextValue,
-  '-': (prevValue, nextValue) => prevValue - nextValue,
-  '=': (prevValue, nextValue) => nextValue,
-};
 
 const Calculator = () => {
   const classes = useStyles();
@@ -44,7 +36,7 @@ const Calculator = () => {
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [displayValue]);
 
   const reset = () => {
     if (displayValue !== '0') {
@@ -102,7 +94,7 @@ const Calculator = () => {
     } else if (operator) {
       // 如果先前已經按過其他四則運算，則先處理
       const currentValue = value || 0;
-      const newValue = CalculatorOperations[operator](currentValue, inputValue);
+      const newValue = constant.CALCULATOR_OPERATIONS[operator](currentValue, inputValue);
 
       dispatch(
         setValue({ value: newValue, displayValue: String(newValue), operator: nextOperator, waitingForOperand: true }),
@@ -120,7 +112,7 @@ const Calculator = () => {
     if (/\d/.test(key)) {
       event.preventDefault();
       inputDigit(parseInt(key, 10));
-    } else if (key in CalculatorOperations) {
+    } else if (key in constant.CALCULATOR_OPERATIONS) {
       event.preventDefault();
       performOperation(key);
     } else if (key === '.') {
@@ -134,9 +126,8 @@ const Calculator = () => {
       clearLastChar();
     } else if (key === 'Clear') {
       event.preventDefault();
+      reset();
     }
-
-    reset();
   };
 
   return (
