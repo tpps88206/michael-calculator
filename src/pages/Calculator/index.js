@@ -62,10 +62,13 @@ const CalculatorPage = () => {
         <Card className="mx-2 my-2">
           <CardContent>
             <h1 id="react-calculator">React Calculator</h1>
-            <img src="https://github.com/tpps88206/calculator/workflows/CI/CD/badge.svg" alt="CI/CD" />
-            <a href="https://codecov.io/gh/tpps88206/calculator" />
-            <img src="https://img.shields.io/codecov/c/github/tpps88206/calculator" alt="Codecov" />
-            <img src="https://img.shields.io/github/license/tpps88206/calculator" alt="License" />
+            <p>
+              <img src="https://github.com/tpps88206/calculator/workflows/CI/CD/badge.svg" alt="CI/CD" />
+              <a href="https://codecov.io/gh/tpps88206/calculator">
+                <img src="https://img.shields.io/codecov/c/github/tpps88206/calculator" alt="Codecov" />
+              </a>
+              <img src="https://img.shields.io/github/license/tpps88206/calculator" alt="License" />
+            </p>
           </CardContent>
         </Card>
         <Card className="mx-2 my-2">
