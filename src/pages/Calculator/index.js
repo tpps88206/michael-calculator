@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Draggable from 'react-draggable';
 
 import classNames from 'classnames';
@@ -21,6 +21,7 @@ const CalculatorPage = () => {
 
   const [open, setOpen] = useState(false); // 是否開啟計算機
   const [mobile, setMobile] = useState(false); // 是否為行動裝置
+  const nodeRef = useRef(null);
 
   useEffect(() => {
     window.addEventListener('resize', handleRWD); // 解析度改變時，檢查裝置類型和裝置大小
@@ -41,11 +42,21 @@ const CalculatorPage = () => {
   };
 
   const handleClickOpen = () => {
+    if (mobile) {
+      document.addEventListener('click', handleOutsideClick, true);
+    }
     setOpen(true);
   };
 
   const handleClose = () => {
+    if (mobile) {
+      document.removeEventListener('click', handleOutsideClick, true);
+    }
     setOpen(false);
+  };
+
+  const handleOutsideClick = e => {
+    if (nodeRef.current.contains(e.target)) handleClose();
   };
 
   const PaperComponent = ({ className, ...props }) => {
@@ -187,7 +198,7 @@ const CalculatorPage = () => {
 
   return (
     <React.Fragment>
-      <div className={classNames(classes.content, 'vw-100', { [classes.mobileContent]: mobile && open })}>
+      <div className={classNames(classes.content, 'vw-100', { [classes.mobileContent]: mobile && open })} ref={nodeRef}>
         <Button
           className="mt-2 ml-2"
           variant="contained"
