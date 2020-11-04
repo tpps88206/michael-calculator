@@ -2,7 +2,9 @@
 
 # React Calculator
 
-This application is to implement a web of a calculator through React.
+![CI/CD](https://github.com/tpps88206/calculator/workflows/CI/CD/badge.svg)
+![Codecov](https://img.shields.io/codecov/c/github/tpps88206/calculator)](https://codecov.io/gh/tpps88206/calculator)
+![License](https://img.shields.io/github/license/tpps88206/calculator)
 
 ## Setup
 
