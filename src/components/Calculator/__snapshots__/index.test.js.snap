@@ -4,7 +4,7 @@ exports[`renders Calculator with snapshot 1`] = `
 <DocumentFragment>
   <div
     class="makeStyles-calculator-16 pa-1 w-100"
-    id="calculator-main-section"
+    id="CalculatorMainSection"
   >
     <div
       class="makeStyles-calculatorDisplay-19"

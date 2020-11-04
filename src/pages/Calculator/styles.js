@@ -29,9 +29,11 @@ const styles = theme => ({
   */
   '@media screen and (min-device-width: 0px) and (max-device-width: 767px)': {
     content: {
-      height: 'calc(50vh - 56px)',
-      width: '100vw',
       overflowY: 'auto',
+      maxHeight: 'calc(100vh - 56px)',
+    },
+    mobileContent: {
+      height: 'calc(50vh - 56px)',
     },
     paper: {
       height: '50vh',
@@ -44,7 +46,7 @@ const styles = theme => ({
       width: '100vw',
       height: '162.5vw',
       margin: 0,
-      '& #calculator-main-section': {
+      '& #CalculatorMainSection': {
         height: '162.5vw !important',
       },
     },

@@ -186,8 +186,8 @@ const CalculatorPage = () => {
   };
 
   return (
-    <div>
-      <div className={classNames({ [classes.content]: mobile && open })}>
+    <React.Fragment>
+      <div className={classNames(classes.content, 'vw-100', { [classes.mobileContent]: mobile && open })}>
         <Button
           className="mt-2 ml-2"
           variant="contained"
@@ -213,7 +213,7 @@ const CalculatorPage = () => {
           <Calculator />
         </Dialog>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

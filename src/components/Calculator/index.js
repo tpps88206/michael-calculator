@@ -131,7 +131,7 @@ const Calculator = () => {
   };
 
   return (
-    <div id="calculator-main-section" className={classNames(classes.calculator, 'pa-1 w-100')}>
+    <div id="CalculatorMainSection" className={classNames(classes.calculator, 'pa-1 w-100')}>
       <CalculatorDisplay value={displayValue} />
       <div className={classes.calculatorKeypad}>
         <Grid container spacing={2} className="h-100">
