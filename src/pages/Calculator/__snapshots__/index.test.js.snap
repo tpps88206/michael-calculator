@@ -5,34 +5,43 @@ exports[`renders CalculatorPage with snapshot 1`] = `
   <div
     class="makeStyles-content-6 vw-100"
   >
-    <button
-      class="MuiButtonBase-root MuiButton-root MuiButton-contained mt-2 ml-2 MuiButton-containedPrimary MuiButton-containedSizeLarge MuiButton-sizeLarge"
-      tabindex="0"
-      type="button"
+    <div
+      class="ma-2 text-center"
     >
-      <span
-        class="MuiButton-label"
+      <img
+        alt="logo"
+        src="logo.png"
+      />
+      <br />
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-containedSizeLarge MuiButton-sizeLarge"
+        tabindex="0"
+        type="button"
       >
         <span
-          class="MuiButton-startIcon MuiButton-iconSizeLarge"
+          class="MuiButton-label"
         >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            viewBox="0 0 24 24"
+          <span
+            class="MuiButton-startIcon MuiButton-iconSizeLarge"
           >
-            <path
-              d="M11 9h2v2h-2zm-2 2h2v2H9zm4 0h2v2h-2zm2-2h2v2h-2zM7 9h2v2H7zm12-6H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 18H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm2-7h-2v2h2v2h-2v-2h-2v2h-2v-2h-2v2H9v-2H7v2H5v-2h2v-2H5V5h14v6z"
-            />
-          </svg>
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11 9h2v2h-2zm-2 2h2v2H9zm4 0h2v2h-2zm2-2h2v2h-2zM7 9h2v2H7zm12-6H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 18H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm2-7h-2v2h2v2h-2v-2h-2v2h-2v-2h-2v2H9v-2H7v2H5v-2h2v-2H5V5h14v6z"
+              />
+            </svg>
+          </span>
+          點擊打開計算機
         </span>
-        打開計算機
-      </span>
-      <span
-        class="MuiTouchRipple-root"
-      />
-    </button>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
     <div
       class="MuiPaper-root MuiCard-root mx-2 my-2 MuiPaper-elevation1 MuiPaper-rounded"
     >
@@ -73,13 +82,13 @@ exports[`renders CalculatorPage with snapshot 1`] = `
         <h2
           id="demo"
         >
-          Demo
+          Github repo
         </h2>
         <p>
           <a
-            href="https://tpps88206.github.io/calculator/"
+            href="https://github.com/tpps88206/calculator/"
           >
-            https://tpps88206.github.io/calculator/
+            https://github.com/tpps88206/calculator/
           </a>
         </p>
       </div>

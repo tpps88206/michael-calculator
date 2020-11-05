@@ -10,6 +10,7 @@ import Dialog from '@material-ui/core/Dialog';
 import GradientIcon from '@material-ui/icons/Gradient';
 import { makeStyles } from '@material-ui/styles';
 
+import logoImg from '../../assets/logo.png';
 import Calculator from '../../components/Calculator';
 import constant from '../../constants/constant';
 import styles from './styles';
@@ -84,9 +85,9 @@ const CalculatorPage = () => {
         </Card>
         <Card className="mx-2 my-2">
           <CardContent>
-            <h2 id="demo">Demo</h2>
+            <h2 id="demo">Github repo</h2>
             <p>
-              <a href="https://tpps88206.github.io/calculator/">https://tpps88206.github.io/calculator/</a>
+              <a href="https://github.com/tpps88206/calculator/">https://github.com/tpps88206/calculator/</a>
             </p>
           </CardContent>
         </Card>
@@ -185,21 +186,24 @@ const CalculatorPage = () => {
   return (
     <React.Fragment>
       <div className={classNames(classes.content, 'vw-100', { [classes.mobileContent]: mobile && open })} ref={nodeRef}>
-        <Button
-          className="mt-2 ml-2"
-          variant="contained"
-          color="primary"
-          size="large"
-          startIcon={<GradientIcon />}
-          onClick={handleClickOpen}
-        >
-          打開計算機
-        </Button>
+        <div className="ma-2 text-center">
+          <img src={logoImg} alt="logo" onClick={handleClickOpen} />
+          <br />
+          <Button
+            variant="contained"
+            color="secondary"
+            size="large"
+            startIcon={<GradientIcon />}
+            onClick={handleClickOpen}
+          >
+            點擊打開計算機
+          </Button>
+        </div>
         {ContentComponent()}
       </div>
       {mobile ? (
         open && (
-          <div className={classes.paper}>
+          <div className={classes.modal}>
             <div className={classNames(classes.calculator, 'position-relative')}>
               <Calculator />
             </div>

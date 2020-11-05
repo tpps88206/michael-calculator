@@ -35,7 +35,7 @@ const styles = theme => ({
     mobileContent: {
       height: 'calc(50vh - 56px)',
     },
-    paper: {
+    modal: {
       height: '50vh',
       margin: 0,
       overflowY: 'auto',
