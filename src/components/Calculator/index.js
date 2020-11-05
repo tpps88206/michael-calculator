@@ -90,15 +90,16 @@ const Calculator = () => {
     const inputValue = parseFloat(displayValue);
 
     if (value == null) {
-      dispatch(setValue({ value: inputValue, displayValue, operator: nextOperator, waitingForOperand: true }));
+      dispatch(setValue({ value: inputValue, operator: nextOperator, waitingForOperand: true }));
     } else if (operator) {
-      // 如果先前已經按過其他四則運算，則先處理
       const currentValue = value || 0;
       const newValue = constant.CALCULATOR_OPERATIONS[operator](currentValue, inputValue);
 
       dispatch(
         setValue({ value: newValue, displayValue: String(newValue), operator: nextOperator, waitingForOperand: true }),
       );
+    } else {
+      dispatch(setValue({ operator: nextOperator, waitingForOperand: true }));
     }
   };
 
