@@ -28,10 +28,6 @@ const styles = theme => ({
     ##Screen = B/w 0px to 767px
   */
   '@media screen and (min-device-width: 0px) and (max-device-width: 767px)': {
-    content: {
-      overflowY: 'auto',
-      maxHeight: 'calc(100vh - 56px)',
-    },
     mobileContent: {
       height: 'calc(50vh - 56px)',
     },
@@ -50,6 +46,10 @@ const styles = theme => ({
         height: '162.5vw !important',
       },
     },
+  },
+  content: {
+    overflowY: 'auto',
+    maxHeight: 'calc(100vh - 56px)',
   },
 });
 
