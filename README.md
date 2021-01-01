@@ -8,7 +8,7 @@
 
 ## Demo
 
-https://tpps88206.github.io/calculator/
+https://tpps88206.github.io/michael-calculator/
 
 ## Setup
 
