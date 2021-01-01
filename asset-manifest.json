@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/calculator/static/js/main.5dd88c0c.chunk.js",
-    "main.js.map": "/calculator/static/js/main.5dd88c0c.chunk.js.map",
-    "runtime-main.js": "/calculator/static/js/runtime-main.d2bb7178.js",
-    "runtime-main.js.map": "/calculator/static/js/runtime-main.d2bb7178.js.map",
-    "static/js/2.97397923.chunk.js": "/calculator/static/js/2.97397923.chunk.js",
-    "static/js/2.97397923.chunk.js.map": "/calculator/static/js/2.97397923.chunk.js.map",
-    "static/js/3.38bf633b.chunk.js": "/calculator/static/js/3.38bf633b.chunk.js",
-    "static/js/3.38bf633b.chunk.js.map": "/calculator/static/js/3.38bf633b.chunk.js.map",
-    "static/js/4.3d79fbd0.chunk.js": "/calculator/static/js/4.3d79fbd0.chunk.js",
-    "static/js/4.3d79fbd0.chunk.js.map": "/calculator/static/js/4.3d79fbd0.chunk.js.map",
+    "main.js": "/calculator/static/js/main.d7d55f16.chunk.js",
+    "main.js.map": "/calculator/static/js/main.d7d55f16.chunk.js.map",
+    "runtime-main.js": "/calculator/static/js/runtime-main.f5f3d9d5.js",
+    "runtime-main.js.map": "/calculator/static/js/runtime-main.f5f3d9d5.js.map",
+    "static/js/2.0155f144.chunk.js": "/calculator/static/js/2.0155f144.chunk.js",
+    "static/js/2.0155f144.chunk.js.map": "/calculator/static/js/2.0155f144.chunk.js.map",
+    "static/js/3.a0bfa05f.chunk.js": "/calculator/static/js/3.a0bfa05f.chunk.js",
+    "static/js/3.a0bfa05f.chunk.js.map": "/calculator/static/js/3.a0bfa05f.chunk.js.map",
+    "static/js/4.75b61b87.chunk.js": "/calculator/static/js/4.75b61b87.chunk.js",
+    "static/js/4.75b61b87.chunk.js.map": "/calculator/static/js/4.75b61b87.chunk.js.map",
     "index.html": "/calculator/index.html",
-    "static/js/2.97397923.chunk.js.LICENSE.txt": "/calculator/static/js/2.97397923.chunk.js.LICENSE.txt",
+    "static/js/2.0155f144.chunk.js.LICENSE.txt": "/calculator/static/js/2.0155f144.chunk.js.LICENSE.txt",
     "static/media/division.1c76d3b4.svg": "/calculator/static/media/division.1c76d3b4.svg",
     "static/media/equal.b426e3a9.svg": "/calculator/static/media/equal.b426e3a9.svg",
     "static/media/logo.da8c1e46.png": "/calculator/static/media/logo.da8c1e46.png",
@@ -19,8 +19,8 @@
     "static/media/toggle.96cc6811.svg": "/calculator/static/media/toggle.96cc6811.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d2bb7178.js",
-    "static/js/2.97397923.chunk.js",
-    "static/js/main.5dd88c0c.chunk.js"
+    "static/js/runtime-main.f5f3d9d5.js",
+    "static/js/2.0155f144.chunk.js",
+    "static/js/main.d7d55f16.chunk.js"
   ]
 }
