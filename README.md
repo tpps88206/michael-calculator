@@ -13,8 +13,8 @@ https://tpps88206.github.io/michael-calculator/
 ## Setup
 
 ```
-$ git clone https://github.com/tpps88206/calculator.git
-$ cd calculator/
+$ git clone https://github.com/tpps88206/michael-calculator.git
+$ cd michael-calculator/
 $ yarn install
 $ yarn start
 ```
